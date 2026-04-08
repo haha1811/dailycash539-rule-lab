@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>規則管理</h2>
+<table>
+  <tr><th>rule_id</th><th>名稱</th><th>啟用</th><th>權重</th><th>params_json</th><th>操作</th></tr>
+  {% for r in rules %}
+  <tr>
+    <form method="post" action="/rules/{{ r.rule_id }}">
+      <td>{{ r.rule_id }}</td>
+      <td>{{ r.name }}<br/><small>{{ r.description }}</small></td>
+      <td><input type="checkbox" name="is_enabled" {% if r.is_enabled %}checked{% endif %}></td>
+      <td><input type="number" step="0.1" name="weight" value="{{ r.weight }}"></td>
+      <td><textarea name="params_json" rows="3" cols="30">{{ r.params_json }}</textarea></td>
+      <td><button type="submit">儲存</button></td>
+    </form>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

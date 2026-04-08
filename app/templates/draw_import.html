@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>匯入 CSV</h2>
+<form action="/api/draws/import" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" required />
+  <button type="submit">上傳</button>
+</form>
+<p>欄位：draw_no, draw_date, n1~n5</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>歷史資料</h2>
+<p>總期數：{{ total }}</p>
+<table>
+  <tr><th>期號</th><th>日期</th><th>號碼</th></tr>
+  {% for d in recent %}
+  <tr><td>{{ d.draw_no }}</td><td>{{ d.draw_date }}</td><td>{{ d.numbers_sorted }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
