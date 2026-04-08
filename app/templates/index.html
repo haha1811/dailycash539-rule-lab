@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>今彩 539 巧合規則驗證系統 MVP。</p>
+<div class="warn">本系統用於驗證巧合規則，不保證預測效果。</div>
+<ul>
+  <li>歷史期數：{{ stats.draw_count }}</li>
+  <li>規則數量：{{ stats.rule_count }}</li>
+  <li>回測任務：{{ stats.backtest_count }}</li>
+</ul>
+{% endblock %}

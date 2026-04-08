@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title or 'dailycash539-rule-lab' }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    nav a { margin-right: 12px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+    .warn { background: #fff5d6; border: 1px solid #e8c96c; padding: 10px; }
+    code, textarea { font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>dailycash539-rule-lab</h1>
+  <nav>
+    <a href="/">首頁</a>
+    <a href="/draws">歷史資料</a>
+    <a href="/draws/import">匯入資料</a>
+    <a href="/rules">規則管理</a>
+    <a href="/predictions/latest">最新預估</a>
+    <a href="/backtests">回測結果</a>
+  </nav>
+  <hr />
+  {% block content %}{% endblock %}
+</body>
+</html>

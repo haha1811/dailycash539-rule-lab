@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>回測結果</h2>
+<p>可使用 API 建立回測：<code>POST /api/backtests</code></p>
+<table>
+  <tr><th>ID</th><th>名稱</th><th>區間</th><th>狀態</th><th>摘要</th></tr>
+  {% for r in runs %}
+  <tr>
+    <td>{{ r.id }}</td>
+    <td>{{ r.name }}</td>
+    <td>{{ r.start_draw_date }} ~ {{ r.end_draw_date }}</td>
+    <td>{{ r.status }}</td>
+    <td><pre>{{ r.summary_json }}</pre></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

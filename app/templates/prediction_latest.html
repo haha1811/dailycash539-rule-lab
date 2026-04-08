@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>最新預估</h2>
+<p>分析基準日期：{{ data.base_draw_date }}</p>
+<h3>規則觸發明細</h3>
+<ul>
+  {% for r in data.triggered_rules %}
+  <li><b>{{ r.rule_id }}</b> | triggered={{ r.triggered }} | candidates={{ r.candidates }} | reason={{ r.reason }}</li>
+  {% endfor %}
+</ul>
+<h3>最終候選排序</h3>
+<table>
+  <tr><th>號碼</th><th>分數</th><th>命中規則數</th><th>來源</th></tr>
+  {% for row in data.final_candidates %}
+  <tr><td>{{ row.number }}</td><td>{{ row.final_score }}</td><td>{{ row.hit_by_rules_count }}</td><td>{{ row.rule_sources }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
